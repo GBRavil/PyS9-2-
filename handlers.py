@@ -1,9 +1,6 @@
 from aiogram import types
 from loader import dp
 import random
-# @dp.message_handler(commands=['start', 'старт'])
-# async def mes_start(message: types.Message):
-#      print('Вам пришло сообщение')
 
 total = 150
 new_game = False
@@ -62,42 +59,6 @@ async def mes_set(message: types.Message):
     else:
         await message.answer(f'{message.from_user.first_name}, нельзя менять правила во время игры')
 
-# @dp.message_handler(commands=['player']) #text=['help'] без /
-# async def mes_team(message: types.Message):
-#     global player1
-#     global player2
-#     global player1_id
-#     global player2_id
-#     if player1 == '':
-#         player1 = message.from_user.first_name
-#         player1_id = message.from_user.id
-#         await dp.bot.send_message(player1_id, f'Игрок № 1 - {player1}')
-        
-#     else:
-#         player2 = message.from_user.first_name 
-#         player2_id = message.from_user.id
-#         await dp.bot.send_message(player2_id, f'Игрок № 2 - {player2}')
-#         await message.answer(f'{player1}, {player2} готовы к игре!')
-
-
-# @dp.message_handler()
-# async def mes_all(message: types.Message):
-#      await message.answer(f'{message.from_user.first_name}, смотри чего поймал - '
-#                           f'{message.text}')
-
-# @dp.message_handler(commands=['set'])
-# async def mes_set(message: types.Message):
-#     global total
-#     global new_game
-#     count = message.text.split()[1]
-#     if not new_game:
-#         if count.isdigit():
-#             total = int(count)
-#             await message.answer(f'Конфет теперь будет {total} ')
-#         else:
-#             await message.answer(f'{message.from_user.first_name}, напишите число цифрами')
-#     else:
-#         await message.answer(f'{message.from_user.first_name}, нельзя менять правила во время игры')
 
 @dp.message_handler()
 async def mes_num(message: types.Message):
